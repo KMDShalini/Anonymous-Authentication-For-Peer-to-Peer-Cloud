@@ -60,7 +60,7 @@ It involves three servers: **App Server**, **Cloud A Server**, and **Cloud B Ser
 ---
 
 ## 3. Project Folder Structure
-
+```bash
 repo-root/
 ├─ majorProject/
 │   ├─ index.html
@@ -72,7 +72,7 @@ repo-root/
 │   ├─ cloudA_db.sql
 │   ├─ cloudB_db.sql
 ├─ README.md
-
+```
 
 ---
 
@@ -89,13 +89,17 @@ Update db_connection.php with Elastic IPs and credentials.
 
 5. Server Access & Testing
 5.1 App Server
-
+```bash
 URL: http://<App-Elastic-IP>/majorProject/home.html
+```
 
 SSH:
+```bash
 ssh -i AppKey.pem ubuntu@<App-Elastic-IP>
+```
 
 MySQL commands:
+```bash
 USE app_db;
 SHOW TABLES;
 SELECT * FROM app_users;
@@ -110,23 +114,30 @@ SELECT
     status,
     created_at
 FROM encrypted_files;
+```
 
 5.2 Cloud A Server
+```bash
 cd Downloads
 ssh -i cloudAkey.pem ubuntu@<CloudA-Elastic-IP>
 sudo mysql;
 USE cloudA_db;
 SELECT id, owner_anon_id, file_name, uploaded_at FROM cloud_files;
+```
 
 5.3 Cloud B Server
+```bash
 ssh -i cloudB-key.pem ubuntu@<CloudB-Elastic-IP>
 SELECT id, owner_anon_id, sender_anon_id, original_filename, file_hash, received_at, downloaded FROM received_files;
+```
 
 6. Apache & PHP Configuration
 
-  1.Navigate to project directory:
+Navigate to project directory:
+```bash
   cd /var/www/html/majorProject
   sudo nano login.php
+```
 
 7. How to Execute the Project
 
@@ -134,8 +145,10 @@ Set up databases (see Section 4)
 
 Update db_connection.php with Elastic IPs and DB credentials
 
-Upload files to server /var/www/html/majorProject
-
+Upload files to server 
+```bash
+/var/www/html/majorProject
+```
 Access via browser using App Server Elastic IP
 
 Test file encryption, transfer, and decryption between Cloud A and Cloud B
