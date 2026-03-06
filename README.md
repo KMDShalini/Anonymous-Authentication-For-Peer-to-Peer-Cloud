@@ -84,7 +84,7 @@ repo-root/
 mysql -u root -p < sql/app_db.sql
 mysql -u root -p < sql/cloudA_db.sql
 mysql -u root -p < sql/cloudB_db.sql
-
+```
 Update db_connection.php with Elastic IPs and credentials.
 
 5. Server Access & Testing
@@ -93,4 +93,73 @@ Update db_connection.php with Elastic IPs and credentials.
 URL: http://<App-Elastic-IP>/majorProject/home.html
 
 SSH:
+ssh -i AppKey.pem ubuntu@<App-Elastic-IP>
+
+MySQL commands:
+USE app_db;
+SHOW TABLES;
+SELECT * FROM app_users;
+SELECT 
+    id,
+    transfer_request_id,
+    sender_anon_id,
+    receiver_anon_id,
+    original_filename,
+    original_hash,	
+    decrypted_hash,
+    status,
+    created_at
+FROM encrypted_files;
+
+5.2 Cloud A Server
+cd Downloads
+ssh -i cloudAkey.pem ubuntu@<CloudA-Elastic-IP>
+sudo mysql;
+USE cloudA_db;
+SELECT id, owner_anon_id, file_name, uploaded_at FROM cloud_files;
+
+5.3 Cloud B Server
+ssh -i cloudB-key.pem ubuntu@<CloudB-Elastic-IP>
+SELECT id, owner_anon_id, sender_anon_id, original_filename, file_hash, received_at, downloaded FROM received_files;
+
+6. Apache & PHP Configuration
+
+  1.Navigate to project directory:
+  cd /var/www/html/majorProject
+  sudo nano login.php
+
+7. How to Execute the Project
+
+Set up databases (see Section 4)
+
+Update db_connection.php with Elastic IPs and DB credentials
+
+Upload files to server /var/www/html/majorProject
+
+Access via browser using App Server Elastic IP
+
+Test file encryption, transfer, and decryption between Cloud A and Cloud B
+
+8. Notes
+
+Ensure Elastic IPs are used to avoid connectivity issues
+
+Security groups must allow SSH, HTTP, and restricted MySQL access
+
+Use provided SSH keys for server access
+
+Test each component individually: App Server, Cloud A, Cloud B
+
+9. References
+
+AWS EC2 Free Tier Documentation: https://aws.amazon.com/free
+
+Ubuntu 22.04 LTS Documentation: https://ubuntu.com/22.04
+
+PHP Documentation: https://www.php.net/docs.php
+
+MySQL Documentation: https://dev.mysql.com/doc/
+
+
+
 
