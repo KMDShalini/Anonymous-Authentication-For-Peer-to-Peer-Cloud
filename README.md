@@ -78,7 +78,7 @@ repo-root/
 
 ## 4. Database Setup
 
-1. Import databases using MySQL:
+### 1. Import databases using MySQL:
 
 ```bash
 mysql -u root -p < sql/app_db.sql
@@ -87,8 +87,8 @@ mysql -u root -p < sql/cloudB_db.sql
 ```
 Update db_connection.php with Elastic IPs and credentials.
 
-5. Server Access & Testing
-5.1 App Server
+## 5. Server Access & Testing
+### 5.1 App Server
 ```bash
 URL: http://<App-Elastic-IP>/majorProject/home.html
 ```
@@ -116,7 +116,7 @@ SELECT
 FROM encrypted_files;
 ```
 
-5.2 Cloud A Server
+### 5.2 Cloud A Server
 ```bash
 cd Downloads
 ssh -i cloudAkey.pem ubuntu@<CloudA-Elastic-IP>
@@ -125,13 +125,13 @@ USE cloudA_db;
 SELECT id, owner_anon_id, file_name, uploaded_at FROM cloud_files;
 ```
 
-5.3 Cloud B Server
+### 5.3 Cloud B Server
 ```bash
 ssh -i cloudB-key.pem ubuntu@<CloudB-Elastic-IP>
 SELECT id, owner_anon_id, sender_anon_id, original_filename, file_hash, received_at, downloaded FROM received_files;
 ```
 
-6. Apache & PHP Configuration
+## 6. Apache & PHP Configuration
 
 Navigate to project directory:
 ```bash
@@ -139,7 +139,7 @@ Navigate to project directory:
   sudo nano login.php
 ```
 
-7. How to Execute the Project
+## 7. How to Execute the Project
 
 Set up databases (see Section 4)
 
@@ -153,7 +153,7 @@ Access via browser using App Server Elastic IP
 
 Test file encryption, transfer, and decryption between Cloud A and Cloud B
 
-8. Notes
+## 8. Notes
 
 Ensure Elastic IPs are used to avoid connectivity issues
 
@@ -163,7 +163,7 @@ Use provided SSH keys for server access
 
 Test each component individually: App Server, Cloud A, Cloud B
 
-9. References
+## 9. References
 
 AWS EC2 Free Tier Documentation: https://aws.amazon.com/free
 
