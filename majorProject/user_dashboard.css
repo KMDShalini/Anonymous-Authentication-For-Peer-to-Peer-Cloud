@@ -1,0 +1,128 @@
+/* ---------------- BASIC ---------------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #f8fbff);
+}
+
+/* ---------------- NAVBAR ---------------- */
+.custom-nav {
+    background-color: #0d47a1;
+    padding: 12px 20px;
+}
+
+/* ---------------- SIDEBAR ---------------- */
+.sidebar {
+    background: linear-gradient(180deg, #1a237e, #283593);
+    height: 100vh;
+    padding: 25px;
+    border-right: 1px solid #1a237e;
+    margin-top: 70px;
+}
+
+.sidebar h5 {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.sidebar a {
+    display: block;
+    color: #e8eaf6;
+    padding: 10px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255,255,255,0.15);
+    color: #ffffff;
+}
+
+/* ---------------- MAIN CONTENT ---------------- */
+.main-content {
+    margin-top: 80px;
+    padding: 30px;
+    background-color: #e3f2fd;
+    min-height: 100vh;
+}
+
+h2 {
+    color: #0d47a1;
+}
+
+/* ---------------- CARDS ---------------- */
+.card, .info-card {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.card h3, .info-card h6 {
+    margin-top: 0;
+    color: #1a237e;
+}
+
+.info-card {
+    text-align: center;
+}
+
+.info-card .count {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1e88e5;
+}
+
+/* ---------------- FORMS ---------------- */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    color: #1a237e;
+}
+
+select, input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #90caf9;
+}
+
+/* ---------------- BUTTONS ---------------- */
+button {
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #1565c0;
+}
+
+/* ---------------- TABLE ---------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #ffffff;
+}
+
+table th, table td {
+    border: 1px solid #bbdefb;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+}

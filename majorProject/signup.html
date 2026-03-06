@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup</title>
+    <link rel="stylesheet" href="signup.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>User Signup</h2>
+
+    <!-- IMPORTANT: action + method + enctype -->
+    <form action="signup.php" method="POST" enctype="multipart/form-data">
+
+        <div class="input-container">
+            <i class="fa fa-user"></i>
+            <input type="text" name="username" placeholder="Enter username" required>
+        </div>
+
+        <!-- <div class="input-container">
+            <input type="password" name="password" placeholder="Enter password"
+                   id="password" required>
+            <i class="fa fa-eye eye-icon" onclick="togglePassword()"></i>
+        </div> -->
+
+        <div class="input-container">
+    <input type="password" name="password" placeholder="Enter password"
+           id="password"
+           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}"
+           title="Password must be at least 8 characters long, include uppercase, lowercase, number, and special character"
+           required>
+    <i class="fa fa-eye eye-icon" onclick="togglePassword()"></i>
+</div>
+
+
+        <div class="input-container">
+            <i class="fa fa-envelope"></i>
+            <input type="email" name="email" placeholder="Enter email" required>
+        </div>
+
+
+        
+
+        <label>Select Cloud</label>
+        <select name="cloud" required>
+            <option value="">-- Select Cloud --</option>
+            <option value="A">Cloud A</option>
+            <option value="B">Cloud B</option>
+        </select>
+
+        
+
+        <button type="submit">Register</button>
+    </form>
+
+    <div class="auth-link">
+        <span>Already have an account?</span>
+        <a href="login.html">Login</a>
+    </div>
+</div>
+
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+    const pwd = document.getElementById("password").value;
+    const email = document.querySelector("input[name='email']").value;
+
+    // Password: at least 8 chars, uppercase, lowercase, number, special
+    const pwdRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+
+
+
+    const emailRegex = /^[^\s@]+@[a-z]+(?:\.[a-z]+)+$/;
+
+    // Check password
+    if (!pwdRegex.test(pwd)) {
+        alert("❌ Password must be at least 8 characters long, include uppercase, lowercase, number, and special character!");
+        e.preventDefault(); // Prevent form submission
+        return;
+    }
+
+    // Check email
+    if (!emailRegex.test(email)) {
+        alert("❌ Please enter a valid email with @ and .");
+        e.preventDefault(); // Prevent form submission
+        return;
+    }
+});
+
+
+function togglePassword() {
+
+    const password = document.getElementById("password");
+    const eye = document.querySelector(".eye-icon");
+
+    if (password.type === "password") {
+        password.type = "text";
+        eye.classList.remove("fa-eye");
+        eye.classList.add("fa-eye-slash");
+    } else {
+        password.type = "password";
+        eye.classList.remove("fa-eye-slash");
+        eye.classList.add("fa-eye");
+    }
+}
+</script>
+
+</body>
+</html>

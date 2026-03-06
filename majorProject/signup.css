@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('login.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Glass Container */
+.container {
+    width: 500px;
+    padding: 30px 40px;
+    background: radial-gradient(circle at top, #3f6fb5, #1e3c72, #0b1020);
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Inputs, Select, Textarea */
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+    height: 65px;
+}
+
+/* Gender radios */
+.gender {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.gender label {
+    display: flex;
+    align-items: center; /* vertically center radio and text */
+    gap: 5px; /* space between circle and text */
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.gender input {
+    /* margin-right: 5px; */
+    margin:0;
+}
+
+/* File input */
+input[type="file"] {
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: green;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* Auth Link */
+.auth-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-link span {
+    color: #ffffff;
+    opacity: 0.85;
+}
+
+.auth-link a {
+    margin-left: 6px;
+    color: rgb(24, 24, 185);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.3s ease;
+}
+
+.auth-link a:hover {
+    color: rgb(62, 62, 235);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 25px 20px;
+    }
+}
+/* Input container for icons */
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center; /* vertically center input and icon */
+    margin-bottom: 15px;
+}
+
+/* Inputs inside container */
+.input-container input {
+    width: 100%;
+    padding-right: 40px; /* space for right icon */
+    padding-left: 10px;
+    height: 40px; /* consistent height */
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* Right-side icons including password eye */
+.input-container i.fa.eye-icon,
+.input-container i.fa:not(.eye-icon) {
+    position: absolute;
+    right: 12px;
+    font-size: 18px;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Remove unnecessary icon for password (only eye icon shows) */
+.input-container input[type="password"] + i.fa:not(.eye-icon) {
+    display: none;
+}
+
+/* For textarea and inputs without icons, keep same style */
+form textarea {
+    resize: none;
+    height: 65px;
+}
+.input-container i.fa {
+    position: absolute; /* position relative to input container */
+    right: 12px;         /* distance from the right edge */
+    top: 40%;            /* start vertically at the middle of container */
+    transform: translateY(-50%); /* perfectly center vertically */
+    font-size: 18px;     /* size of the icon */
+    color: #555;         /* icon color */
+}

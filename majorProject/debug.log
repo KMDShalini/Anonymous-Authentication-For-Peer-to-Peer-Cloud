@@ -1,0 +1,142 @@
+2026-01-19 19:45:59 - Login.php hit
+2026-01-19 19:45:59 - Received username=Harshini_2005, cloud=A
+2026-01-19 19:45:59 - DB rows found: 1
+2026-01-19 19:45:59 - User fetched: {"id":1,"username":"Harshini_2005","email":"harshinikanagarla811@gmail.com","password":"$2y$10$W9QUtz.qP5EGxlm8n06nIOnsn1xysbBGoxMB\/4IcTcDWHtZXBTx\/K","alias":"user_077908","anon_id":"07790805dcea31ad579d2db36bb665c62ff6ddb0960300bf1657f949c27c378b","cloud":"A","created_at":"2026-01-08 17:01:35","mobile":"9603968422","address":"juvvalapem","dob":"2005-03-08","gender":"Female","profile_pic":"uploads\/1767871895_harshi.jpg"}
+2026-01-19 19:45:59 - OTP generated: 833234
+2026-01-19 19:45:59 - Sending OTP to email: harshinikanagarla811@gmail.com
+SMTP: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP d9443c01a7336-2a719107c34sm89485695ad.44 - gsmtp
+
+SMTP: CLIENT -> SERVER: EHLO localhost
+
+SMTP: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2402:8100:21e7:646a:197a:9e03:ba42:8d0e]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+SMTP: CLIENT -> SERVER: STARTTLS
+
+SMTP: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+SMTP: CLIENT -> SERVER: EHLO localhost
+
+SMTP: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2402:8100:21e7:646a:197a:9e03:ba42:8d0e]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+SMTP: CLIENT -> SERVER: AUTH LOGIN
+
+SMTP: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+SMTP: CLIENT -> SERVER: [credentials hidden]
+SMTP: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+SMTP: CLIENT -> SERVER: [credentials hidden]
+SMTP: SERVER -> CLIENT: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2a719107c34sm89485695ad.44 - gsmtp
+
+SMTP: SMTP ERROR: Password command failed: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2a719107c34sm89485695ad.44 - gsmtp
+
+SMTP: SMTP Error: Could not authenticate.
+SMTP: CLIENT -> SERVER: QUIT
+
+SMTP: SERVER -> CLIENT: 221 2.0.0 closing connection d9443c01a7336-2a719107c34sm89485695ad.44 - gsmtp
+
+SMTP: SMTP Error: Could not authenticate.
+2026-01-19 19:46:02 - Mailer error: SMTP Error: Could not authenticate.
+2026-01-19 19:54:38 - Login.php hit
+2026-01-19 19:54:38 - Received username=Harshini_2005, cloud=A
+2026-01-19 19:54:38 - DB rows found: 1
+2026-01-19 19:54:38 - User fetched: {"id":1,"username":"Harshini_2005","email":"harshinikanagarla811@gmail.com","password":"$2y$10$W9QUtz.qP5EGxlm8n06nIOnsn1xysbBGoxMB\/4IcTcDWHtZXBTx\/K","alias":"user_077908","anon_id":"07790805dcea31ad579d2db36bb665c62ff6ddb0960300bf1657f949c27c378b","cloud":"A","created_at":"2026-01-08 17:01:35","mobile":"9603968422","address":"juvvalapem","dob":"2005-03-08","gender":"Female","profile_pic":"uploads\/1767871895_harshi.jpg"}
+2026-01-19 19:54:38 - OTP generated: 370829
+2026-01-19 19:54:38 - Sending OTP to email: harshinikanagarla811@gmail.com
+SMTP: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP d9443c01a7336-2a7190ca058sm97580185ad.33 - gsmtp
+
+SMTP: CLIENT -> SERVER: EHLO localhost
+
+SMTP: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2402:8100:21e7:646a:197a:9e03:ba42:8d0e]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+SMTP: CLIENT -> SERVER: STARTTLS
+
+SMTP: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+SMTP: CLIENT -> SERVER: EHLO localhost
+
+SMTP: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2402:8100:21e7:646a:197a:9e03:ba42:8d0e]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+SMTP: CLIENT -> SERVER: AUTH LOGIN
+
+SMTP: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+SMTP: CLIENT -> SERVER: [credentials hidden]
+SMTP: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+SMTP: CLIENT -> SERVER: [credentials hidden]
+SMTP: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+SMTP: CLIENT -> SERVER: MAIL FROM:<harshinikanagarla811@gmail.com>
+
+SMTP: SERVER -> CLIENT: 250 2.1.0 OK d9443c01a7336-2a7190ca058sm97580185ad.33 - gsmtp
+
+SMTP: CLIENT -> SERVER: RCPT TO:<harshinikanagarla811@gmail.com>
+
+SMTP: SERVER -> CLIENT: 250 2.1.5 OK d9443c01a7336-2a7190ca058sm97580185ad.33 - gsmtp
+
+SMTP: CLIENT -> SERVER: DATA
+
+SMTP: SERVER -> CLIENT: 354 Go ahead d9443c01a7336-2a7190ca058sm97580185ad.33 - gsmtp
+
+SMTP: CLIENT -> SERVER: Date: Mon, 19 Jan 2026 19:54:38 +0100
+
+SMTP: CLIENT -> SERVER: To: harshinikanagarla811@gmail.com
+
+SMTP: CLIENT -> SERVER: From: CloudBridge Secure <harshinikanagarla811@gmail.com>
+
+SMTP: CLIENT -> SERVER: Subject: Login OTP
+
+SMTP: CLIENT -> SERVER: Message-ID: <P7qXBSB2r6bcRv2qfLPtUza8OQtZPlgKRekTIQ8O7LU@localhost>
+
+SMTP: CLIENT -> SERVER: X-Mailer: PHPMailer 7.0.2 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP: CLIENT -> SERVER: Content-Type: text/plain; charset=iso-8859-1
+
+SMTP: CLIENT -> SERVER: 
+
+SMTP: CLIENT -> SERVER: Your OTP is: 370829
+
+SMTP: CLIENT -> SERVER: 
+
+SMTP: CLIENT -> SERVER: .
+
+SMTP: SERVER -> CLIENT: 250 2.0.0 OK  1768848883 d9443c01a7336-2a7190ca058sm97580185ad.33 - gsmtp
+
+SMTP: CLIENT -> SERVER: QUIT
+
+SMTP: SERVER -> CLIENT: 221 2.0.0 closing connection d9443c01a7336-2a7190ca058sm97580185ad.33 - gsmtp
+
+2026-01-19 19:54:43 - OTP mail sent successfully

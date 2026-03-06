@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+
+    <link rel="stylesheet" href="login.css"> <!-- reuse user login CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Admin Login</h2>
+
+    <form id="adminLoginForm" onsubmit="return false;">
+
+        <div class="input-container">
+            <i class="fa fa-user"></i>
+            <input type="text" name="username" placeholder="Enter admin username" required>
+        </div>
+
+        <div class="input-container">
+            <input type="password" name="password" placeholder="Enter password" id="adminPassword" required>
+            <i class="fa fa-eye eye-icon" onclick="togglePassword()"></i>
+        </div>
+
+        <!-- SEND OTP -->
+        <button type="button" onclick="sendAdminOTP()">Send OTP</button>
+
+        <!-- OTP SECTION -->
+        <div id="otpSection" style="display:none; margin-top:18px;">
+            <div class="input-container">
+                <input type="text" name="otp" id="otp" placeholder="Enter OTP" maxlength="6">
+            </div>
+
+            <button type="button" onclick="verifyAdminOTP()">Login</button>
+        </div>
+
+    </form>
+
+    <div class="auth-link">
+        <a href="home.html">⬅ Back to Home</a>
+    </div>
+</div>
+
+<script>
+function togglePassword() {
+    const pwd = document.getElementById("adminPassword");
+    pwd.type = pwd.type === "password" ? "text" : "password";
+}
+
+/* SEND OTP → BACKEND */
+function sendAdminOTP() {
+    const formData = new FormData(document.getElementById("adminLoginForm"));
+
+    fetch("admin_login.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.text())
+    .then(data => {
+        console.log("ADMIN LOGIN RESPONSE:", data);
+
+        if (data === "OTP_SENT") {
+            alert("OTP sent to your email");
+            document.getElementById("otpSection").style.display = "block";
+        } else if (data === "NO_USER") {
+            alert("No admin account found");
+        } else if (data === "WRONG_PASSWORD") {
+            alert("Incorrect password");
+        } else {
+            alert(data); // shows mail errors too
+        }
+    })
+    .catch(() => {
+        alert("Server error. Check XAMPP.");
+    });
+}
+
+/* VERIFY OTP */
+function verifyAdminOTP() {
+    const otp = document.getElementById("otp").value.trim();
+
+    if (otp.length !== 6) {
+        alert("Please enter 6-digit OTP");
+        return;
+    }
+
+    fetch("admin_verify_otp.php", {
+        method: "POST",
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: "otp=" + otp
+    })
+    .then(res => res.text())
+    .then(data => {
+        if (data === "SUCCESS") {
+            window.location.href = "admin_dashboard.php";
+        } else {
+            alert(data);
+        }
+    });
+}
+</script>
+
+</body>
+</html>
